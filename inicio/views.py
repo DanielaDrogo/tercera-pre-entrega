@@ -5,6 +5,8 @@ from datetime import datetime
 from django.http import HttpResponse
 from django.template import Template, context, loader
 
+from inicio.models import planta
+
 import random
 
 def inicio(request):
@@ -33,5 +35,12 @@ def probando(request):
     print(numeros)
     
     return render(request, 'probando_if_for.html', {'numeros': numeros})
+
+def crear_planta(request, tipo, especie):
+    mi_planta = planta(tipo=tipo, especie=especie)
+    mi_planta.save()
+    return render(request, 'plantas_template/creacion.html', {"planta": mi_planta})
+    
+    
     
     
