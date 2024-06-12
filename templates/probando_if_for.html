@@ -1,23 +1,26 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-</head>
-<body>
-    <ul>
-        {% for num  in numeros %}
-            
-            {% if num > 50 %}
-            <li style="color: red;">codigo {{num}}</li>
-            {% else %}
-            <li style="color: blue">codigo {{num}}</li>
-            {% endif %}
-        {% endfor %} 
-    </ul>
-    
-    
-    
-</body>
-</html>
+{% extends "base.html" %}
+
+{% block title_head %}
+Probando
+{% endblock title_head %}
+
+{% block h1_header %}
+Probando
+{% endblock h1_header %}
+
+{% block main %}
+<ul>
+    {% for num  in numeros %}
+        
+        {% if num > 50 %}
+        <li style="color: red;">codigo {{num}}</li>
+        {% else %}
+        <li style="color: blue">codigo {{num}}</li>
+        {% endif %}
+    {% endfor %} 
+</ul>
+{% endblock main %}
+
+
+
+

@@ -10,7 +10,8 @@ from inicio.models import planta
 import random
 
 def inicio(request):
-    return HttpResponse('Hola bienvenidos a mi INICIO :D')
+#    return HttpResponse('Hola bienvenidos a mi INICIO :D')
+    return render(request, 'inicio/index.html')
 
 
 def template1(request, nombre, apellido):
@@ -28,6 +29,7 @@ def template2(request, nombre, apellido):
     }
     return render(request, 'template2.html', datos)
 
+
 def probando(request):
     
     lista = list(range(100))
@@ -35,6 +37,7 @@ def probando(request):
     print(numeros)
     
     return render(request, 'probando_if_for.html', {'numeros': numeros})
+
 
 def crear_planta(request, tipo, especie):
     mi_planta = planta(tipo=tipo, especie=especie)
