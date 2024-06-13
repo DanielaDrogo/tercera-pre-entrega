@@ -11,7 +11,6 @@ from inicio.forms import CrearPlantaFormulario
 import random
 
 def inicio(request):
-#    return HttpResponse('Hola bienvenidos a mi INICIO :D')
     return render(request, 'inicio/index.html')
 
 
@@ -49,18 +48,6 @@ def crear_planta(request, tipo, especie):
     
     
 def crear_planta2(request):
-    
-    # print('valor de la request: ', request)
-    # print('valor de GET: ', request.GET)
-    # print('valor de POST: ', request.POST)
-    
-    # if request.method == 'POST':
-    #     mi_planta = planta(tipo=request.POST.get('tipo'), especie=request.POST.get('especie'))
-    #     mi_planta.save()
-    
-    # return render(request, 'inicio/crear_planta2.html')
-
-
     print('valor de la request: ', request)
     print('valor de GET: ', request.GET)
     print('valor de POST: ', request.POST)
@@ -73,16 +60,14 @@ def crear_planta2(request):
             mi_planta.save()
             return redirect('inicio')
     
-    
     formulario = CrearPlantaFormulario()
     return render(request, 'inicio/crear_planta2.html', {'formulario': formulario})
+    
     
     
 def plantas(request):
     plantas = planta.objects.all()
     return render(request, 'inicio/plantas.html', {'plantas': plantas})   
-    
-    
     
     
     

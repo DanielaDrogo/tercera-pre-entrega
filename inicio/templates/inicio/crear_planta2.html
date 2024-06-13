@@ -11,25 +11,11 @@ Crea aca tus plantitas
 
 
 {% block main %}
-
-<form action= {% url "crear_planta2" %} method='POST'>
-    
+<form action= {% url "crear_planta2" %} method='POST'> 
     {% csrf_token %}    
-    {% comment %} <p>
-        tipo de planta
-        <input type="text" name="tipo" placeholder="tipo de planta">
-    </p>
-    <p>
-        especie
-        <input type="text" name="especie" placeholder="especie">
-    </p> {% endcomment %}
-    
     {{formulario}}
-
     <button>enviar</button>
-
 </form>
-
 {% endblock main %}
 
 

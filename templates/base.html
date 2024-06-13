@@ -27,11 +27,8 @@
                 <a class="navbar-brand" href="{% url "inicio" %}">INICIO</a>
                 <a class="navbar-brand" href="{% url "template2" "don" "papeño" %}">Template 2</a>
                 <a class="navbar-brand" href="{% url "probando" %}">Probando</a>
-                {% comment %} <a class="navbar-brand" href="{% url "crear_planta" "cactus" "opuntia" %}">Creacion planta</a>  {% endcomment %}
                 <a class="navbar-brand" href="{% url "crear_planta2" %}">Crear planta</a>
-                <a class="navbar-brand" href="{% url "plantas" %}">plantas</a>
-
-            <!--<a class="btn btn-primary" href="#signup">Sign Up</a>   -->    
+                <a class="navbar-brand" href="{% url "plantas" %}">plantas</a>    
             </div>
         </nav>
         <!-- Masthead-->
@@ -78,10 +75,11 @@
                 </div>
             </div>
         </header>
-        <main>
-            {% block main %}{% endblock main %}
-
-        </main>
+        <body>
+            {% block main %}
+            
+            {% endblock main %}
+        </body>
         <!-- Footer-->
         <footer class="footer bg-light">
             <div class="container">
