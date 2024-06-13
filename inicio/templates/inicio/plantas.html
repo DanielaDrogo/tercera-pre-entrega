@@ -1,0 +1,27 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Lista de plantas
+{% endblock title_head %}
+
+{% block h1_header %}
+Lista de plantitas
+{% endblock h1_header %}
+
+
+
+{% block main %}
+
+{% if plantas %}
+<ul>
+    {% for planta in plantas %}
+    <li>{{planta}}</li>
+    {% endfor %}
+</ul>
+{% else %}
+<p>No hay plantas</p>
+{% endif %}
+
+{% endblock main %}
+
+

@@ -1,0 +1,37 @@
+
+{% extends "base.html" %}
+
+{% block title_head %}
+crear planta
+{% endblock title_head %}
+
+{% block h1_header %}
+Crea aca tus plantitas
+{% endblock h1_header %}
+
+
+{% block main %}
+
+<form action= {% url "crear_planta2" %} method='POST'>
+    
+    {% csrf_token %}    
+    {% comment %} <p>
+        tipo de planta
+        <input type="text" name="tipo" placeholder="tipo de planta">
+    </p>
+    <p>
+        especie
+        <input type="text" name="especie" placeholder="especie">
+    </p> {% endcomment %}
+    
+    {{formulario}}
+
+    <button>enviar</button>
+
+</form>
+
+{% endblock main %}
+
+
+
+

@@ -7,7 +7,12 @@ urlpatterns = [
     path('template1/<str:nombre>/<str:apellido>', views.template1),
     path('template2/<str:nombre>/<str:apellido>', views.template2, name="template2"),
     path('probando', views.probando, name="probando"),
-    path('planta/crear/<str:tipo>/<str:especie>/', views.crear_planta, name="crear_planta"),
+    # path('planta/crear/<str:tipo>/<str:especie>/', views.crear_planta, name="crear_planta"),
+    path('planta/', views.plantas, name="plantas"),
+    
+    path('planta/crear/', views.crear_planta2, name="crear_planta2"),
+
+    
 ]
 
 
