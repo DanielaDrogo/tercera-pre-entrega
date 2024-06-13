@@ -14,9 +14,9 @@ def inicio(request):
     return render(request, 'inicio/index.html')
 
 
-def template1(request, nombre, apellido):
-    fecha = datetime.now()
-    return HttpResponse(f'<h1>Mi template 1</h1> -- fecha: {fecha} -- bienvenido {nombre} {apellido}')
+# def template1(request, nombre, apellido):
+#     fecha = datetime.now()
+#     return HttpResponse(f'<h1>Mi template 1</h1> -- fecha: {fecha} -- bienvenido {nombre} {apellido}')
 
 
 def template2(request, nombre, apellido):
