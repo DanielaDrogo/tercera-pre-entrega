@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Planta
+{% endblock title_head %}
+
+{% block h1_header %}
+{{mi_planta}}
+{% endblock h1_header %}
+
+{% block main %}
+<ul>
+    <li>tipo: {{mi_planta.tipo}}</li>
+    <li>especie: {{mi_planta.especie}}</li>
+</ul>
+{% endblock main %}

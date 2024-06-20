@@ -6,7 +6,7 @@ from django.http import HttpResponse
 from django.template import Template, context, loader
 
 from inicio.models import planta
-from inicio.forms import CrearPlantaFormulario
+from inicio.forms import CrearPlantaFormulario, BuscarPlanta, EditarPlantaFormulario
 
 import random
 
@@ -58,7 +58,7 @@ def crear_planta2(request):
             datos = formulario.cleaned_data
             mi_planta = planta(tipo=request.POST.get('tipo'), especie=request.POST.get('especie'))
             mi_planta.save()
-            return redirect('inicio')
+            return redirect('plantas')
     
     formulario = CrearPlantaFormulario()
     return render(request, 'inicio/crear_planta2.html', {'formulario': formulario})
@@ -66,9 +66,52 @@ def crear_planta2(request):
     
     
 def plantas(request):
-    plantas = planta.objects.all()
-    return render(request, 'inicio/plantas.html', {'plantas': plantas})   
     
+    formulario = BuscarPlanta(request.GET)
+    if formulario.is_valid():
+        tipo = formulario.cleaned_data['tipo']
+        plantas = planta.objects.filter(tipo__icontains=tipo)
+    
+    # plantas = planta.objects.all()
+    return render(request, 'inicio/plantas.html', {'plantas': plantas, 'formulario': formulario})   
+    
+  
+  
+def eliminar_planta(request, id):
+    mi_planta = planta.objects.get(id=id)
+    mi_planta.delete()
+    
+    return redirect('plantas')
+
+
+def editar_planta(request, id):
+    mi_planta = planta.objects.get(id=id)
+    
+    formulario = EditarPlantaFormulario(initial={'tipo': mi_planta.tipo, 'especie': mi_planta.especie})
+    
+    if request.method == 'POST':
+        formulario = EditarPlantaFormulario(request.POST)
+        if formulario.is_valid():
+            info = formulario.cleaned_data
+            
+            mi_planta.tipo = info['tipo']
+            mi_planta.especie = info['especie']
+            mi_planta.save()
+            return redirect('plantas')
+    
+    return render(request, 'inicio/editar_planta.html', {'formulario': formulario, 'planta': mi_planta})
+
+
+def ver_planta(request, id):
+    mi_planta = planta.objects.get(id=id)
+    return render(request, 'inicio/ver_planta.html', {'mi_planta': mi_planta})
+
+
+
+
+
+
+  
     
     
     

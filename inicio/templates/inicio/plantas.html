@@ -10,10 +10,21 @@ Lista de plantitas
 
 
 {% block main %}
+<button>
+    <a href="{% url "crear_planta2" %}">Crear planta</a> 
+</button>
+<form action= {% url "plantas" %} method="get">
+    {{formulario}}
+    <button>Buscar</button>
+</form>
 {% if plantas %}
 <ul>
     {% for planta in plantas %}
-    <li>{{planta}}</li>
+    <li>{{planta}} | 
+        <a href="{% url "eliminar_planta" planta.id %}">Eliminar</a> | 
+        <a href="{% url "editar_planta" planta.id %}">Editar</a> |
+        <a href="{% url "ver_planta" planta.id %}">ver</a> 
+    </li> 
     {% endfor %}
 </ul>
 {% else %}

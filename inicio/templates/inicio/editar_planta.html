@@ -1,0 +1,22 @@
+
+{% extends "base.html" %}
+
+{% block title_head %}
+editar planta
+{% endblock title_head %}
+
+{% block h1_header %}
+editando a {{planta}}
+{% endblock h1_header %}
+
+
+{% block main %}
+<form action= {% url "editar_planta" planta.id %} method='POST'> 
+    {% csrf_token %}    
+    {{formulario}}
+    <button>enviar</button>
+</form>
+{% endblock main %}
+
+
+
