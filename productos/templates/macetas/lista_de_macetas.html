@@ -1,0 +1,35 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+macetas
+{% endblock title_head %}
+
+{% block h1_header %}
+Lista de macetas
+{% endblock h1_header %}
+
+
+{% block main %}
+<button>
+    <a class="btn btn-success" href="{% url "crear_maceta" %}">Crear Maceta</a> 
+</button> 
+
+{% if maceta %}
+<ul>
+    {% for maceta in macetas %}
+    <li>{{maceta}} | 
+        {% comment %} <a href="{% url "eliminar_maceta" maceta.id %}">Eliminar</a> | 
+        <a href="{% url "editar_maceta" maceta.id %}">Editar</a> |
+        <a href="{% url "ver_maceta" maceta.id %}">ver</a>  {% endcomment %}
+    </li> 
+    {% endfor %}
+</ul>
+{% else %}
+<p>No hay macetas creadas</p>
+{% endif %}
+{% endblock main %} 
+
+
+
+
+

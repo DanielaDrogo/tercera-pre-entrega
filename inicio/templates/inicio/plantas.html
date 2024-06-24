@@ -1,29 +1,26 @@
 {% extends "base.html" %}
 
 {% block title_head %}
-Lista de plantas
+Lista de planta
 {% endblock title_head %}
 
 {% block h1_header %}
-Lista de plantitas
+Lista de plantas
 {% endblock h1_header %}
 
 
 {% block main %}
-<button>
-    <a href="{% url "crear_planta2" %}">Crear planta</a> 
-</button>
-<form action= {% url "plantas" %} method="get">
-    {{formulario}}
-    <button>Buscar</button>
-</form>
+ <button>
+    <a class="btn btn-success" href="{% url "crear_planta2" %}">Crear planta</a> 
+</button> 
+
 {% if plantas %}
 <ul>
     {% for planta in plantas %}
     <li>{{planta}} | 
         <a href="{% url "eliminar_planta" planta.id %}">Eliminar</a> | 
         <a href="{% url "editar_planta" planta.id %}">Editar</a> |
-        <a href="{% url "ver_planta" planta.id %}">ver</a> 
+        <a href="{% url "ver_planta" planta.id %}">ver</a>  
     </li> 
     {% endfor %}
 </ul>
