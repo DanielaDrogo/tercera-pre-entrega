@@ -10,6 +10,8 @@ from inicio.forms import CrearPlantaFormulario, BuscarPlanta, EditarPlantaFormul
 
 import random
 
+from django.contrib.auth.decorators import login_required
+
 def inicio(request):
     return render(request, 'inicio/index.html')
 
@@ -76,7 +78,7 @@ def plantas(request):
     return render(request, 'inicio/plantas.html', {'plantas': plantas, 'formulario': formulario})   
     
   
-  
+@login_required
 def eliminar_planta(request, id):
     mi_planta = planta.objects.get(id=id)
     mi_planta.delete()
@@ -84,6 +86,7 @@ def eliminar_planta(request, id):
     return redirect('plantas')
 
 
+@login_required
 def editar_planta(request, id):
     mi_planta = planta.objects.get(id=id)
     
