@@ -1,0 +1,18 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Maceta
+{% endblock title_head %}
+
+{% block h1_header %}
+Maceta: {{maceta}}
+{% endblock h1_header %}
+
+{% block main %}
+<h3>Maceta:</h3>
+<ul>
+    <li>tamaño: {{maceta.tamanio}}</li>
+    <li>especie: {{maceta.material}}</li>
+    <li>especie: {{maceta.precio}}</li>
+</ul>
+{% endblock main %}

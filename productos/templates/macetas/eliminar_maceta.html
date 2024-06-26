@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Eliminar maceta
+{% endblock title_head %}
+
+{% block h1_header %}
+Eliminar macetitas
+{% endblock h1_header %}
+
+
+{% block main %}
+<form action= {% url "eliminar_maceta" maceta.id %} method='POST'> 
+    {% csrf_token %}    
+
+    <p>
+        ¿¿¿esta seguro/a que quiere borrar la maceta {{maceta}}???
+    </p>
+
+    <button>Confirmar borrado</button>
+
+</form>
+{% endblock main %}

@@ -14,13 +14,13 @@ Lista de macetas
     <a class="btn btn-success" href="{% url "crear_maceta" %}">Crear Maceta</a> 
 </button> 
 
-{% if maceta %}
+{% if macetas %}
 <ul>
     {% for maceta in macetas %}
     <li>{{maceta}} | 
-        {% comment %} <a href="{% url "eliminar_maceta" maceta.id %}">Eliminar</a> | 
-        <a href="{% url "editar_maceta" maceta.id %}">Editar</a> |
-        <a href="{% url "ver_maceta" maceta.id %}">ver</a>  {% endcomment %}
+        <a href="{% url "eliminar_maceta" maceta.id %}">Eliminar</a> |  
+        <a href="{% url "editar_maceta" maceta.id %}">Editar</a> | 
+        <a href={% url "ver_maceta" maceta.id %}>ver</a>  
     </li> 
     {% endfor %}
 </ul>
