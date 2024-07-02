@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect
 from datetime import datetime
 
-# Create your views here.
 from django.http import HttpResponse
 from django.template import Template, context, loader
 
@@ -11,6 +10,8 @@ from inicio.forms import CrearPlantaFormulario, BuscarPlanta, EditarPlantaFormul
 import random
 
 from django.contrib.auth.decorators import login_required
+
+# Create your views here.
 
 def inicio(request):
     return render(request, 'inicio/index.html')

@@ -8,10 +8,6 @@ from django.urls import reverse_lazy
 
 # Create your views here.
 
-
-# def macetas(request):
-#     return HttpResponse('vista de macetas')
-
 class Macetas(ListView):
     model = Maceta
     template_name = 'macetas/lista_de_macetas.html'

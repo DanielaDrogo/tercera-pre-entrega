@@ -8,7 +8,7 @@
         <meta name="author" content="" />
         <title>
             {% block title_head %}
-            Landing Page - Start Bootstrap Theme
+            Sobre mi | about me
             {% endblock title_head %}
         </title>       
         <!-- Favicon-->
@@ -51,55 +51,25 @@
                 
             </div>
         </nav>
-        <!-- Masthead-->
-        <header class="masthead">
-            <div class="container position-relative">
-                <div class="row justify-content-center">
-                    <div class="col-xl-6">
-                        <div class="text-center text-white">
-                            <!-- Page heading-->
-                            <h1 class="mb-5">
-                                {% block h1_header %}
-                                titulo base...
-                                {% endblock h1_header %}
-                            </h1>
-                            <!-- Signup form-->
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- * * SB Forms Contact Form * *-->
-                            <!-- * * * * * * * * * * * * * * *-->
-                            <!-- This form is pre-integrated with SB Forms.-->
-                            <!-- To make this form functional, sign up at-->
-                            <!-- https://startbootstrap.com/solution/contact-forms-->
-                            <!-- to get an API token!-->
-                            <form class="form-subscribe" id="contactForm" data-sb-form-api-token="API_TOKEN">
-                                
-                                <!-- Submit success message-->
-                                <!---->
-                                <!-- This is what your users will see when the form-->
-                                <!-- has successfully submitted-->
-                                <div class="d-none" id="submitSuccessMessage">
-                                    <div class="text-center mb-3">
-                                        <div class="fw-bolder">Form submission successful!</div>
-                                        <p>To activate this form, sign up at</p>
-                                        <a class="text-white" href="https://startbootstrap.com/solution/contact-forms">https://startbootstrap.com/solution/contact-forms</a>
-                                    </div>
-                                </div>
-                                <!-- Submit error message-->
-                                <!---->
-                                <!-- This is what your users will see when there is-->
-                                <!-- an error submitting the form-->
-                                <div class="d-none" id="submitErrorMessage"><div class="text-center text-danger mb-3">Error sending message!</div></div>
-                            </form>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </header>
-
+        
+        
         <body>
-            {% block main %}
+            <div>
+                <h1 class="mb-5 d-flex justify-content-center">      
+                    Sobre mi...
+                </h1>
+
+                <p class="d-flex justify-content-center">hola gente soy Dany del curso de coder, esta pagina es de Django y aqui se pueden cargar 
+                    datos y despues verlos, tambien podes crearte un usuario para abrir y cerrar sesion. <br> 
+                    Soy estudiante de programacion; estudie office, diseño grafico, html, css, wordpress. 
+                      
+                </p>
+
+                <img src="{% static "assets\img\testimonials-1.jpg" %} " alt="imagen">
+
+            </div>
             
-            {% endblock main %}
+            
         </body>
         <!-- Footer-->
         <footer class="footer bg-light">

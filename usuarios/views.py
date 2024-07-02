@@ -12,7 +12,6 @@ from usuarios.models import DatosExtra
 
 def login(request):
     
-    
     formulario = AuthenticationForm()
     
     if request.method == 'POST':

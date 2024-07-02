@@ -1,0 +1,31 @@
+
+{% extends "base.html" %}
+
+{% block title_head %}
+Blog
+{% endblock title_head %}
+
+{% block h1_header %}
+Blog titulo
+{% endblock h1_header %}
+
+
+{% block main %}
+<h2>subtitulo</h2>
+<p>
+    {% lorem 6 b random %}
+</p>
+
+    {% for blog in blogs %}
+        <li>
+            
+            <p>fecha: {{ blog.fecha }}</p>
+            
+            <img src="{{ blog.imagen.url }}" alt="Imagen del blog">
+        </li>
+        <form action="{% url "lista_blog" %}">
+            {{form}}
+        </form>
+    {% endfor %}
+</ul>
+{% endblock main %}
