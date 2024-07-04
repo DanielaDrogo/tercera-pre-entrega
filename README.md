@@ -22,4 +22,4 @@ Tambien cuenta con la funcion para crear blogs.
 
 -------------------------------
 link del video mostrando la pagina:
-
+https://www.loom.com/share/5092f47d62954200872559773a362603?sid=62bf63e5-e4a6-4075-b305-2fe9f43f1e2f
