@@ -15,5 +15,11 @@ arbol - palta
 planta - antirrhinum barrelieri
 cactus - echinopsis pachanoi
 
+ACTUALIZACION:
 
+ahora el proyecto cuenta con un un registro de usuarios y con un inicio y cierre de sesion.
+Tambien cuenta con la funcion para crear blogs.
+
+-------------------------------
+link del video mostrando la pagina:
 

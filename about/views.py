@@ -5,6 +5,5 @@ from django.http import HttpResponse
 # def hola(request):
 #     return HttpResponse('hola')
 
-
 def AboutMe(request):
     return render(request, 'aboutme/sobre_mi.html')
