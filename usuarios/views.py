@@ -49,13 +49,14 @@ def registro(request):
 def editar_perfil(request):
     
     datosextra = request.user.datosextra
-    formulario = EditarPerfil(initial={'avatar': datosextra.avatar}, instance=request.user)
+    formulario = EditarPerfil(initial={'avatar': datosextra.avatar, 'comida_favorita': datosextra.comida_favorita}, instance=request.user)
     
     if request.method == "POST":
         formulario = EditarPerfil(request.POST, request.FILES, instance=request.user)
         if formulario.is_valid():
             
             datosextra.avatar = formulario.cleaned_data.get('avatar')
+            datosextra.comida_favorita = formulario.cleaned_data.get('comida_favorita')
             datosextra.save()
             
             formulario.save()

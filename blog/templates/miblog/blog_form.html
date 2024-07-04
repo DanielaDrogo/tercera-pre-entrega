@@ -1,0 +1,26 @@
+
+{% extends 'base.html' %}
+
+{% block title_head %}
+{% if form.instance.pk %}
+    Editar Blog
+{% else %}
+    Crear Blog
+{% endif %}
+{% endblock %}
+
+{% block h1_header %}
+{% if form.instance.pk %}
+    Editar Blog
+{% else %}
+    Crear Blog
+{% endif %}
+{% endblock %}
+
+{% block main %}
+<form method="post" enctype="multipart/form-data">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button type="submit" class="btn btn-primary">Guardar</button>
+</form>
+{% endblock %}

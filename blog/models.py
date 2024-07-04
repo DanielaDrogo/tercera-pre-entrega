@@ -6,7 +6,7 @@ class Blog(models.Model):
     titulo = models.CharField(max_length=100)
     subtitulo = models.CharField(max_length=100)
     cuerpo = models.TextField()
-    fecha = models.DateField()
+    fecha = models.DateField(auto_now_add=True)
     imagen = models.ImageField(upload_to='imagen_blog', blank=True, null=True)
     
     def __str__(self):

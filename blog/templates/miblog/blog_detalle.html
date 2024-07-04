@@ -1,0 +1,19 @@
+{% extends 'base.html' %}
+
+{% block title_head %}
+{{ blog.titulo }}
+{% endblock %}
+
+{% block h1_header %}
+{{ blog.titulo }}
+{% endblock %}
+
+{% block main %}
+<h2>{{ blog.titulo }}</h2>
+<p>{{ blog.subtitulo }}</p>
+<p>{{ blog.fecha }}</p>
+{% if blog.imagen %}
+    <img src="{{ blog.imagen.url }}" alt="Imagen de {{ blog.titulo }}">
+{% endif %}
+<p>{{ blog.cuerpo }}</p>
+{% endblock %}
