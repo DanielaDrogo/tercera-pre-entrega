@@ -12,8 +12,8 @@ Mi Perfil
 {% block main %}
 <a class="btn btn-success" href="{% url "editar_perfil" %}">editar perfil</a>
 <h3>Bienvenido/a {{user.first_name}} {{user.last_name}}</h3>
-<p>{{user.email}}</p>
-<p>Mi comida favorita es: {{user.datosextra.comida_favorita}}</p>
+<p><strong>E-mail: </strong>{{user.email}}</p>
+<p> <strong>Mi comida favorita es: </strong>{{user.datosextra.comida_favorita}}</p>
 
 
 {% if request.user.datosextra.avatar %}
