@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+
+{% block title_head %}
+Mi Perfil
+{% endblock title_head %}
+
+{% block h1_header %}
+Mi Perfil
+{% endblock h1_header %}
+
+
+{% block main %}
+<a class="btn btn-success" href="{% url "editar_perfil" %}">editar perfil</a>
+<h3>Bienvenido/a {{user.first_name}} {{user.last_name}}</h3>
+<p>{{user.email}}</p>
+<p>Mi comida favorita es: {{user.datosextra.comida_favorita}}</p>
+
+
+{% if request.user.datosextra.avatar %}
+<img src="{{request.user.datosextra.avatar.url}}" alt="imagen" height="200px">
+{% endif %}
+{% endblock main %}

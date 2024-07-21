@@ -45,9 +45,9 @@ def registro(request):
     return render(request, 'usuarios/registro.html', {'formulario': formulario})
 
 
+
 @login_required
 def editar_perfil(request):
-    
     datosextra = request.user.datosextra
     formulario = EditarPerfil(initial={'avatar': datosextra.avatar, 'comida_favorita': datosextra.comida_favorita}, instance=request.user)
     
@@ -60,7 +60,7 @@ def editar_perfil(request):
             datosextra.save()
             
             formulario.save()
-            return redirect('editar_perfil')
+            return redirect('ver_perfil')
     
     return render(request, 'usuarios/editar_perfil.html', {'formulario': formulario})
 
@@ -70,6 +70,6 @@ class CambiarPassword(LoginRequiredMixin, PasswordChangeView):
     success_url = reverse_lazy('editar_perfil')
 
 
-
-
+def ver_perfil(request):
+    return render(request, 'usuarios/ver_perfil.html')
 
