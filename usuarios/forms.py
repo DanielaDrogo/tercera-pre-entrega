@@ -19,6 +19,8 @@ class EditarPerfil(UserChangeForm):
     last_name =forms.CharField(label='Apellido')
     comida_favorita = forms.CharField(label='comida favorita')
     avatar = forms.ImageField(required=False)
+    eliminar_avatar = forms.BooleanField(required=False, label='Eliminar avatar')
+    
     class Meta:
         model = User
         fields = ['email', 'first_name', 'last_name', 'comida_favorita', 'avatar']

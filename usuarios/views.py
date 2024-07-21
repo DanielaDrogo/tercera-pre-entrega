@@ -46,6 +46,24 @@ def registro(request):
 
 
 
+# @login_required
+# def editar_perfil(request):
+#     datosextra = request.user.datosextra
+#     formulario = EditarPerfil(initial={'avatar': datosextra.avatar, 'comida_favorita': datosextra.comida_favorita}, instance=request.user)
+    
+#     if request.method == "POST":
+#         formulario = EditarPerfil(request.POST, request.FILES, instance=request.user)
+#         if formulario.is_valid():
+            
+#             datosextra.avatar = formulario.cleaned_data.get('avatar')
+#             datosextra.comida_favorita = formulario.cleaned_data.get('comida_favorita')
+#             datosextra.save()
+            
+#             formulario.save()
+#             return redirect('ver_perfil')
+    
+#     return render(request, 'usuarios/editar_perfil.html', {'formulario': formulario})
+
 @login_required
 def editar_perfil(request):
     datosextra = request.user.datosextra
@@ -54,8 +72,14 @@ def editar_perfil(request):
     if request.method == "POST":
         formulario = EditarPerfil(request.POST, request.FILES, instance=request.user)
         if formulario.is_valid():
+            # Eliminar avatar si se ha marcado la casilla
+            if formulario.cleaned_data.get('eliminar_avatar'):
+                datosextra.avatar.delete()
+                datosextra.avatar = None
+            # Solo actualizar el avatar si se ha proporcionado uno nuevo
+            elif 'avatar' in request.FILES:
+                datosextra.avatar = formulario.cleaned_data.get('avatar')
             
-            datosextra.avatar = formulario.cleaned_data.get('avatar')
             datosextra.comida_favorita = formulario.cleaned_data.get('comida_favorita')
             datosextra.save()
             
